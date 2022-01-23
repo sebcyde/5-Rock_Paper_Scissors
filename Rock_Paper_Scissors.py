@@ -14,16 +14,31 @@ while True:
 
     random_number = random.randint(0,2)
     # Rock:0 , Paper:1 , Scissors:2
+    computer_pick = options[random_number]
+    print("Computer picked", computer_pick)
 
-    if user_input == options[0] and random_number == options[2]:
+
+    if user_input == "rock" and computer_pick == "scissors":
+        user_wins += 1
         print("Computer chose scissors, you win!")
+        
     
-    elif user_input == options[1] and random_number == options[0]:
+    elif user_input == "paper" and computer_pick == "rock":
+        user_wins += 1
         print("Computer chose rock, you win!")
         
-    elif user_input == options[2] and random_number == options[1]:
+        
+    elif user_input == "scissors" and computer_pick == "paper":
+        user_wins += 1
         print("Computer chose paper, you win!")
+        
 
+    elif user_input == computer_pick:
+        print("It's a tie! Try again")
 
+    else:
+        computer_wins += 1
+        print("You Lose")
 
+print("Your score is", user_wins, "wins and", computer_wins, "losses.")
 print("Goodbye!")
